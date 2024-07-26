@@ -1,58 +1,58 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* Aplica el modelo de caja de borde a todos los elementos */
+  font-family: Arial, sans-serif; /* Establece la fuente predeterminada para todos los elementos */
 }
 
 body {
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  background-color: #333; /* Color de fondo del cuerpo */
+  display: flex; /* Utiliza flexbox para centrar el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100vh; /* Altura del cuerpo ocupa el 100% de la altura de la ventana */
+  margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
 }
 
 #game-board {
-  display: grid;
-  grid-template-columns: repeat(var(--grid-size), var(--cell-size));
-  grid-template-rows: repeat(var(--grid-size), var(--cell-size));
-  background-color: #ccc;
-  padding: var(--cell-gap);
-  gap: var(--cell-gap);
-  position: relative;
+  display: grid; /* Utiliza el sistema de cuadrícula CSS */
+  grid-template-columns: repeat(var(--grid-size), var(--cell-size)); /* Define el número de columnas y su tamaño */
+  grid-template-rows: repeat(var(--grid-size), var(--cell-size)); /* Define el número de filas y su tamaño */
+  background-color: #ccc; /* Color de fondo del tablero */
+  padding: var(--cell-gap); /* Espaciado alrededor del tablero */
+  gap: var(--cell-gap); /* Espacio entre las celdas */
+  position: relative; /* Permite posicionamiento absoluto de los elementos hijos */
 }
 
 .cell {
-  background-color: #aaa;
+  background-color: #aaa; /* Color de fondo de las celdas vacías */
 }
 
 .tile {
-  --x: 2;
-  --y: 3;
-  --background-lightness: 80%;
-  --text-lightness: 20%;
-  --tile-color: hsl(0, 0%, 80%);
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: var(--cell-size);
-  height: var(--cell-size);
-  top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
-  left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
-  font-weight: bold;
-  background-color: var(--tile-color);
-  color: hsl(200, 25%, var(--text-lightness));
-  animation: show 200ms ease-in-out;
-  transition: 100ms ease-in-out;
-  font-size: 8vmin; 
+  --x: 2; /* Valor inicial para la coordenada x de la tile */
+  --y: 3; /* Valor inicial para la coordenada y de la tile */
+  --background-lightness: 80%; /* Brillo inicial del fondo de la tile */
+  --text-lightness: 20%; /* Brillo inicial del texto de la tile */
+  --tile-color: hsl(0, 0%, 80%); /* Color inicial del fondo de la tile */
+  position: absolute; /* Posiciona absolutamente la tile dentro de su contenedor */
+  display: flex; /* Utiliza flexbox para centrar el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  width: var(--cell-size); /* Ancho de la tile igual al tamaño de la celda */
+  height: var(--cell-size); /* Altura de la tile igual al tamaño de la celda */
+  top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap)); /* Calcula la posición superior de la tile */
+  left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap)); /* Calcula la posición izquierda de la tile */
+  font-weight: bold; /* Establece el texto en negrita */
+  background-color: var(--tile-color); /* Color de fondo de la tile definido por la variable */
+  color: hsl(200, 25%, var(--text-lightness)); /* Color del texto de la tile */
+  animation: show 200ms ease-in-out; /* Define la animación de aparición de la tile */
+  transition: 100ms ease-in-out; /* Define la transición para los cambios de estilo */
+  font-size: 8vmin; /* Tamaño de la fuente en unidades vmin */
 }
 
 @keyframes show {
   0% {
-    opacity: 0.5;
-    transform: scale(0);
+    opacity: 0.5; /* Opacidad inicial de la animación */
+    transform: scale(0); /* Escala inicial de la animación */
   }
 }
