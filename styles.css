@@ -2,7 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 #game-board {
@@ -32,20 +33,21 @@ body {
   --y: 3;
   --background-lightness: 80%;
   --text-lightness: 20%;
+  --tile-color: hsl(0, 0%, 80%);
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: var(--cell-size);
   height: var(--cell-size);
-
   top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   font-weight: bold;
-  background-color: hsl(200, 50%, var(--background-lightness));
+  background-color: var(--tile-color);
   color: hsl(200, 25%, var(--text-lightness));
   animation: show 200ms ease-in-out;
   transition: 100ms ease-in-out;
+  font-size: 8vmin; 
 }
 
 @keyframes show {
