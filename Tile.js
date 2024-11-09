@@ -62,30 +62,30 @@ export default class Tile {
   getTileColor(value) {
     // Devuelve el color de fondo de la tile basado en su valor
     switch (value) {
-      case 2:
-        return "#f7d794"; // peach
-      case 4:
-        return "#ff5252"; // red
-      case 8:
-        return "#ff7f50"; // coral
-      case 16:
-        return "#ffa07a"; // light salmon
-      case 32:
-        return "#ffd700"; // gold
-      case 64:
-        return "#da70d6"; // orchid
-      case 128:
-        return "#7b68ee"; // medium slate blue
-      case 256:
-        return "#00fa9a"; // medium spring green
-      case 512:
-        return "#48d1cc"; // medium turquoise
-      case 1024:
-        return "#20b2aa"; // light sea green
-      case 2048:
-        return "#778899"; // light slate gray
-      default:
-        return "#8b0000"; // dark red
+        case 2:
+        return "#e8eaf6"; // very light lavender
+        case 4:
+        return "#c5cae9"; // light lavender blue
+        case 8:
+        return "#9fa8da"; // lavender blue
+        case 16:
+        return "#7986cb"; // medium blue lavender
+        case 32:
+        return "#5c6bc0"; // rich blue
+        case 64:
+        return "#3f51b5"; // strong blue
+        case 128:
+        return "#3949ab"; // deep indigo
+        case 256:
+        return "#303f9f"; // darker indigo
+        case 512:
+        return "#283593"; // dark blue indigo
+        case 1024:
+        return "#1a237e"; // very dark indigo
+        case 2048:
+        return "#0d47a1"; // bold deep blue
+        default:
+        return "#b71c1c"; // dark red for higher tiles
     }
-  }
+    }
 }

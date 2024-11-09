@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <!-- Establece el conjunto de caracteres del documento a UTF-8 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Garantiza la compatibilidad con versiones anteriores de Internet Explorer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Configura la vista para dispositivos móviles, estableciendo el ancho en el ancho del dispositivo y el nivel de zoom inicial en 1 -->
     <title>2048 Game</title>
-    <!-- Título de la página -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Enlace al archivo de estilos CSS -->
     <script src="script.js" type="module"></script>
-    <!-- Enlace al archivo JavaScript con tipo de módulo -->
-  </head>
-  <body>
-    <!-- Contenido del cuerpo de la página -->
-    <div id="game-board"></div>
-    <!-- Contenedor para el tablero del juego con el id "game-board" -->
-  </body>
+</head>
+
+<body>
+    <div id="container">
+        <aside id="sidebar">
+            <header id="score-board">
+                <h1>Puntuación: <span id="score">0</span></h1>
+            </header>
+            <div id="leaderboard">
+                <h2>Leaderboard</h2>
+                <div class="leaderboard-header">
+                    <span>Rank</span>
+                    <span>Nombre</span>
+                    <span>IG</span>
+                    <span>Puntuación</span>
+                </div>
+                <ol id="leaderboard-list"></ol>
+                <!-- Botones de paginación -->
+                <div class="pagination-buttons">
+                    <button id="prev-button">«</button>
+                    <button id="next-button">»</button>
+                </div>
+            </div>
+        </aside>
+        <div id="game-board"></div>
+    </div>
+
+    <!-- Formulario de Game Over para guardar el nombre, IG y la puntuación -->
+    <div id="game-over-form" style="display: none;">
+        <h2>Game Over</h2>
+        <form id="player-form">
+            <label for="player-name">Nombre:</label>
+            <input type="text" id="player-name" required />
+
+            <label for="player-ig">Instagram:</label>
+            <input type="text" id="player-ig" required />
+
+            <button type="submit">Guardar Puntuación</button>
+        </form>
+    </div>
+</body>
+
 </html>

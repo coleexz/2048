@@ -20,10 +20,10 @@ export default class Grid {
     });
   }
 
-  get cells() { 
+  get cells() {
     return this.#cells; // Devuelve todas las celdas de la cuadrícula
   }
-  
+
   get cellsByRow() {
     // Organiza las celdas por filas
     return this.#cells.reduce((cellGrid, cell) => {
@@ -71,7 +71,7 @@ class Cell {
     return this.#mergeTile; // Devuelve el tile que se va a fusionar
   }
 
-  set mergeTile(value) { 
+  set mergeTile(value) {
     this.#mergeTile = value;
     if (value == null) return;
     this.#mergeTile.x = this.#x;
@@ -105,10 +105,12 @@ class Cell {
     );
   }
 
-  mergeTiles() {
-    // Fusiona los tiles si es posible
+  mergeTiles(updateScore) {
+    // Fusiona los tiles si es posible y actualiza la puntuación
     if (this.tile == null || this.mergeTile == null) return;
-    this.tile.value = this.tile.value + this.mergeTile.value;
+    const mergedValue = this.tile.value + this.mergeTile.value;
+    this.tile.value = mergedValue;
+    updateScore(mergedValue); // Llama a updateScore con el valor de la fusión
     this.mergeTile.remove();
     this.mergeTile = null;
   }
