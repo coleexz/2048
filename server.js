@@ -18,8 +18,8 @@ const db = new sqlite3.Database("./leaderboard.db", (err) => {
 db.run(
   `CREATE TABLE IF NOT EXISTS leaderboard (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    ig TEXT,
+    name TEXT NOT NULL UNIQUE,
+    ig TEXT UNIQUE,
     score INTEGER NOT NULL
   )`,
   (err) => {
@@ -30,6 +30,7 @@ db.run(
     }
   }
 );
+
 
 // Ruta para guardar la puntuación
 app.post("/save-score", (req, res) => {
